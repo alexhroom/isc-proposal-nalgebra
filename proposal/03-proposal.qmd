@@ -47,16 +47,16 @@ This would include:
 <!--
 What does the high-level architecture look like?
 -->
-The bindings will be done using the [`extendr`](https://github.com/extendr) package, which is a well-supported package for bindings between R and Rust. The matrices will be stored as `nalgebra` matrices, which means that other Rust-based R packages will be able to take and use the arrays without incurring object conversion costs. There would also be routines for converting the `nalgebra` matrices to other array types such as the base R arrays, which would improve compatibility with packages that use existing R linear algebra capabilities.
+The bindings will be done using the [`extendr`](https://github.com/extendr) package, which is a well-supported package for bindings between R and Rust. There would also be routines for converting the `nalgebra` matrices to other array types such as the base R arrays, for compatibility with packages that use existing R linear algebra capabilities.
 
-One potential pitfall here is that R and Rust have very distinct memory management models, which often causes issues when an object is 'shared' between two languages (see the [Python-Rust bindings package PyO3, which must make compromises to successfully deal with Python's Global Interpreter Lock and confusing garbage collection](https://pyo3.github.io/pyo3/v0.16.5/memory.html)). If this is not solvable in R, then a compromise would have to be made such as putting restrictions on how the Rust memory management of these matrices is done (see the PyO3 solution above) or how the users can interact with these matrices.
+One potential pitfall here is that R and Rust have very distinct memory management models, which often causes issues when an object is 'shared' between two languages (see the [Python-Rust bindings package PyO3, which must make compromises to successfully deal with Python's Global Interpreter Lock and confusing garbage collection](https://pyo3.github.io/pyo3/v0.16.5/memory.html)).
 
 ### Assumptions
 
 <!--
 What assumptions are you making that, if proven false, would invalidate the project?
 -->
-We are assuming that there is desire among the communities whose data analysis depends heavily on linear algebra would be interested in using R rather than a language such as Python or MATLAB, and that authors of Rust data analysis packages are interested in having R bindings. 
+We are assuming that there is desire among the communities whose data analysis depends heavily on linear algebra desire to use R, and that authors of Rust data analysis packages are interested in having R bindings. 
 
 We have seen a desire for an R binding for a Rust differential equations package `diffsol`, [which has put a call in its README for an R language wrapper.](https://github.com/martinjrobins/diffsol?tab=readme-ov-file#wanted---developers-for-higher-level-language-wrappers)
 

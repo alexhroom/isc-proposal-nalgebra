@@ -4,28 +4,23 @@
 This section provides a condensed view of the entire proposal, one page long.
 It should be a comprehensive high-level overview that captures the essence of the proposal, including its goals, methods, expected outcomes, deliverables, and budget.
 -->
-**NB: this is one of three proposals related to the `extendr` project, the other two created by Kenneth Blake Vernon and Mossa Merhi Reimert.**
-
 ## Overview
-This R Consortium ISC proposal requests $1200 for the development of a Rust-based linear algebra library for R, based on bindings to the `rextendr` library.
+This R Consortium ISC proposal requests $1500 for the development of a Rust-based linear algebra library for R, based on bindings to the `rextendr` library.
 
 ## The Problem
-R’s base matrix capabilities (mainly wrappers for LAPACK) are simplistic. Alternatives like the `rray` library (based on C++ `xtensor`) are outdated and not actively maintained.  This hampers users in science and engineering fields who need efficient linear algebra (e.g. for ODEs or matrix decompositions in Bayesian methods). Python (NumPy/SciPy) and MATLAB offer superior performance, flexibility, and robustness - R is impractical.
+- R’s base matrix capabilities (mainly wrappers for LAPACK) are simplistic, and alternatives like the `rray` library are outdated.
+- For users in science and engineering fields who need efficient linear algebra (e.g. for ODEs or Bayesian methods), Python (NumPy/SciPy) and MATLAB offer superior performance, flexibility, and robustness - R is impractical.
+- Rust is increasingly used in R packages via bindings like `extendr`, `savvy`, and `cargo`. The poor state of R’s linear algebra tools hinders development of Rust-backed packages that use matrix operations.
 
-Growing Use of Rust: Rust is increasingly used in R packages via bindings like `extendr`, `savvy`, and `cargo`. The poor state of R’s linear algebra tools hinders development of Rust-backed packages that use matrix operations.
-
-## Proposed Solution
+## Proposed Solution & Deliverables
 An R wrapper around the popular `nalgebra` Rust linear algebra library, implemented using the `extendr` package. This includes:
-- implementing an R interface to the `nalgebra` matrix type
-- implementing a maintainable and extensible interface to the routines available for Rust `nalgebra` matrices from R
+
+- implementing an R interface to the `nalgebra` matrix type which is R-idiomatic.
+- implementing a maintainable and extensible interface to the routines available for Rust `nalgebra` matrices from R.
 - The ability to use these matrices in `extendr`-based R functions written in Rust with low conversion cost, as well as efficient conversion routines to existing R matrix types for compatibility.
 
-## Deliverables
-- Creation of `nalgebra` matrices from R in an R-idiomatic way.
-- Ability to call `nalgebra` matrix routines from R
-- Interoperability with other `extendr`-based packages as well as existing R matrix libraries.
-
 ## Timeline
+
 - **Months 1-2**: study of `nalgebra`, `extendr`, and similar library `rray` (for C++-based R arrays) and implementation of array interface in R
 - **Months 3-4**: compatibility with `extendr` for passing array data to Rust-based R functions.
 - **Months 5-6**: framework and implementation for calling `nalgebra` matrix routines in R.
@@ -36,4 +31,4 @@ An R wrapper around the popular `nalgebra` Rust linear algebra library, implemen
 - User guide and documentation
 
 ## Risk Mitigation
-This project is quite small, so is relatively low-risk. The hardest part will likely be the first milestone (implementing the type itself). Risk is also mitigated by the ordering of the milestones - if the first two milestones are completed, then it will be possible to pass arrays to Rust functions which can then call the matrix routines inside Rust; this means it still provides impact to the R-Rust community.
+This project is quite small, so is relatively low-risk. The hardest part will likely be the first milestone. Risk is mitigated by the ordering of the milestones - if the first two milestones are completed, then it will be possible to pass arrays to Rust functions which can then call the matrix routines inside Rust; this means it still provides impact to the R-Rust community.

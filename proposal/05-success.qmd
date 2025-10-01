@@ -4,14 +4,11 @@ Projects should have a definition of done that is measurable, and a
 thorough understanding going in of what the risks are to delivery
 -->
 
-## Definition of done
-<!--
-What does success look like?
--->
 The project will be considered complete when the following deliverables from the timeline are provided:
+
 - an implementation of the `nalgebra` array type, being able to create and mutate these arrays using idiomatic R syntax.
 - an implementation of most (if not all) of the `nalgebra` matrix API, including transformations, decompositions, and algebraic operations between matrices.
-- being able to demonstrate use of this functionality in a toy R package, and demonstrate a memory-efficient conversion to other array types.
+- being able to demonstrate use of this functionality in a toy R-Rust package, and demonstrate a memory-efficient conversion to other array types.
 
 ## Measuring success
 <!--

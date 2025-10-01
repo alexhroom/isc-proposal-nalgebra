@@ -10,6 +10,7 @@ are proposed.
 -->
 - Kenneth Blake Vernon ([`github/kbvernon`](https://github.com/kbvernon))
 - Alberson da Silva Miranda
+- Martin Robinson ([website](https://www.sabsr3.ox.ac.uk/people/dr-martin-robinson))
 
 ## Project team
 <!--
@@ -34,4 +35,4 @@ Who has been given the opportunity to provide feedback on the
 proposal? This should include any R Consortium & ISC members who the
 proposal has been discussed with.
 -->
-- Josiah Parry ([`github/josiahparry](https://github.com/JosiahParry/))
+- Josiah Parry ([`github/josiahparry`](https://github.com/JosiahParry/))

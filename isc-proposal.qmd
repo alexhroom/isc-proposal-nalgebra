@@ -1,10 +1,10 @@
 ---
-title: "Proposal Title"
+title: "A Rust-based linear algebra package for R using `extendr`"
 author:
-  - name: Annie Easley
-    orcid: 5555-5555-5555-5555
+  - name: Alex H. Room
+    orcid: 0000-0002-5314-2331
     affiliations:
-      - "Lewis Research Center, National Aeronautics and Space Administration"
+      - "Science and Technology Facilities Council, Harwell, Oxfordshire"
 
 date: today
 date-format: iso
@@ -17,9 +17,6 @@ format:
       - right=1.25in
 bibliography: references.bib
 ---
-
-_This template was last revised on 2025-08-26_
-
 
 {{< include proposal/00-exec-summary.qmd >}}
 
