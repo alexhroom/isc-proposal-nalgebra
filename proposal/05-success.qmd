@@ -8,15 +8,22 @@ thorough understanding going in of what the risks are to delivery
 <!--
 What does success look like?
 -->
+The project will be considered complete when the following deliverables from the timeline are provided:
+- an implementation of the `nalgebra` array type, being able to create and mutate these arrays using idiomatic R syntax.
+- an implementation of most (if not all) of the `nalgebra` matrix API, including transformations, decompositions, and algebraic operations between matrices.
+- being able to demonstrate use of this functionality in a toy R package, and demonstrate a memory-efficient conversion to other array types.
 
 ## Measuring success
 <!--
 How will we know when success is achieved, what markers can we use
 along the way
 -->
+Success is measured by a Github project board and milestones, with issues closed and pull requests created for each part of the work. 
+There will also be measures of code test coverage and robust tests created to ensure that the code performs as it is expected to.
 
 ## Future work
 <!--
 How could this be extended / developed in the future by yourself
 and/or the community in general?
 -->
+This could potentially be expanded or built upon for backends to other Rust-based array types, such as [`faer`](https://github.com/sarah-quinones/faer-rs) and [`ndarray`](https://docs.rs/ndarray/latest/ndarray/).

@@ -20,5 +20,14 @@ It is important to cover:
  - [ ] If proposing changes to R itself: letter of support from R Core member
 -->
 ```
+## Problem 1: the state of linear algebra in R
+Performant linear algebra in R is quite an underdeveloped area. The base R matrix capability (array types and mostly wrappers for LAPACK) is simplistic and loose, and other options such as the [`rray` library](https://rray.r-lib.org/), based on on the C++ library `xtensor`, have not been updated in years.
 
-An example in-text citation [@wickham2016].
+This is an issue for users in many areas of science where performant linear algebra is important, for example for solving ordinary differential equations, or algorithms which require large amounts of matrix decomposition such as nested sampling algorithms in Bayesian model selection.
+
+Other user-friendly programming languages such as Python (using numpy/scipy) or MATLAB offer much better flexibility, robustness, and performance than the current offerings in R. This essentially makes R a non-starter for linear-algebra-heavy data analysis - scientists who would otherwise love to use R find themselves straddling R and Python, using Python for their data analysis and then R for their statistics and graphs.
+
+## Problem 2: linear algebra and R-Rust interfaces
+The use of the Rust programming language as a backend for R packages has become much more popular in recent years, with several binding options available such as [`extendr`](https://github.com/extendr), [`savvy`](https://github.com/yutannihilation/savvy/), and [`cargo`](https://github.com/dbdahl/cargo-framework). Core support has also increased, such as the addition of `cargo` in the CRAN servers allowing the compilation of CRAN packages, as well as [specific guidance on using Rust in CRAN packages](https://cran.r-project.org/web/packages/using_rust.html).
+
+However, the first problem - the state of linear algebra in R - can make it difficult to create effective R-Rust interfaces for packages which rely heavily on linear algebra. This can make it difficult for developers to write bindings between R and Rust for their packages, to a point which essentially prohibits this from being done. 

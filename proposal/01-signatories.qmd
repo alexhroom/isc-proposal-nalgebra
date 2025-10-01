@@ -8,6 +8,8 @@ accept outside input is also a good marker for project delivery.
 An optional section would be for R-Core signatories where changes to R
 are proposed.
 -->
+- Kenneth Blake Vernon ([`github/kbvernon`](https://github.com/kbvernon))
+- Alberson da Silva Miranda
 
 ## Project team
 <!--
@@ -16,12 +18,15 @@ the proposal gets accepted and are already signed up and rearing to
 go? Briefly describe all participants and the skills they will bring
 to the project.
 -->
+### Alex H. Room 
+Research software engineer who has used the `extendr` project since its inception (for ecology package `rshift`), with experience in R and Rust. Also a maintainer of `nalgebra`.
 
 ## Contributors
 <!--
 Who are the people who have actively helped with this proposal but
 won't necessarily be on the core project team later?
 -->
+- Mossa Merhi Reimert ([`github/cgmossa`](https://github.com/CGMossa/))
 
 ## Consulted
 <!--
@@ -29,4 +34,4 @@ Who has been given the opportunity to provide feedback on the
 proposal? This should include any R Consortium & ISC members who the
 proposal has been discussed with.
 -->
-
+- Josiah Parry ([`github/josiahparry](https://github.com/JosiahParry/))

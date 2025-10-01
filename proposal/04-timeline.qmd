@@ -11,6 +11,9 @@ important because projects need to get up and running quickly.
  - [ ] Licence decisions
  - [ ] Reporting framework
 -->
+- Creation of Github repository for the project, as well as a CI framework via Github actions where linting and testing of the codebase will be done.
+- MIT License is compatible with all external dependencies
+- Reporting will be done through Github issues and pull requests, which will track complete and outstanding parts of the project.
 
 
 ## Technical delivery
@@ -21,6 +24,24 @@ provide at least a high-level description of the implementation.
 Including target dates is really important as you need to be committed
 and the ISC need to have a means of tracking delivery
 -->
+### Months 1-2: array type support
+Initial research and work will be on supporting the array type itself. This will require study of how existing projects like `rray` implement their types, how to ensure the project will easily integrate with `extendr` and with other Rust projects, as well as how to deal with the complexity of `nalgebra` arrays (e.g. they can be statically or dynamically sized at compile time - how does this look from R?)
+
+The rest of the work will then be actually implementing an R interface for the `nalgebra` array type.
+
+Success criteria will be an implementation of the `nalgebra` array type, being able to create and mutate these arrays using idiomatic R syntax.
+
+### Month 3-4: `rextendr` and R compatibility
+Collaborative work with the `extendr` team to ensure that the array types are compatible and successfully can be passed from R to `rextendr`-bound Rust functions with minimal conversion overhead.
+
+Also, simple functionality for being able to convert the `nalgebra` R arrays to `rray` or base R arrays. Ideally this is done in a memory-efficient way, which would require study of how `nalgebra` stores its array data.
+
+Success looks like being able to demonstrate use of this functionality in a toy R package, and demonstrate a memory-efficient conversion to other array types.
+
+### Month 5-6: array routine support in R
+Implementation of the various routines available for `nalgebra` arrays in Rust. Ideally this implementation would support and facilitate easy addition of new methods added in future versions of `nalgebra`.
+
+Success will be an implementation of most (if not all) of the `nalgebra` matrix API, including transformations, decompositions, and algebraic operations between matrices.
 
 ## Other aspects
 
@@ -37,6 +58,11 @@ to be shared quarterly on the R Consortium blog.
  - [ ] UseR!
  - [ ] ISC meetings
 -->
+- License will likely be permissive, as all external dependencies are (`nalgebra` Apache-2.0, `rextendr` MIT), and we see this as being useful for data analysis in industry where a GPL license may be offputting.
+- Code is hosted on Github publically for others to contribute. This is a well-used and well-known platform.
+- Work can be publicised at both Rust and R conferences, such as UseR! and the Scientific Computing in Rust conference; the latter already has a precedent for people sharing developments in R-Rust compatibility, such as this talk by [David B. Dahl](https://www.youtube.com/watch?v=-qGhAZnntgA).
+- Content shared on the technical detail for each milestone (so every 2 months) on the R consortium blog.
+
 
 ## Budget & funding plan
 
@@ -55,3 +81,6 @@ to the project and the project period. The ISC reserves the right to vet
 how funds are used for each project separately. If in doubt, please reach
 out to us.
 -->
+**Total funding requested: $1200**
+
+The main developer (Alex H. Room) will allocate approx 0.5-1 days per week (4-7 hours). We will take an average of 5 hours per week for the labor costs, at a rate of $12.50 per hour, which is a competitive rate for open-source project work.
